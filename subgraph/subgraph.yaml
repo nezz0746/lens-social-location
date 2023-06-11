@@ -1,0 +1,58 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ETHPragueMap
+    network: mumbai
+    source:
+      address: "0xc0C02cB4b04f263F0A287b21d41c72d8e7374A74"
+      abi: ETHPragueMap
+      startBlock: 36710196
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ApprovalForAll
+        - LocationVerified
+        - Move
+        - TransferBatch
+        - TransferSingle
+        - URI
+      abis:
+        - name: ETHPragueMap
+          file: ./abis/ETHPragueMap.json
+      eventHandlers:
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: LocationVerified(indexed address,uint256,uint128)
+          handler: handleLocationVerified
+        - event: Move(indexed address,uint256,uint256,indexed uint256,indexed uint256)
+          handler: handleMove
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: URI(string,indexed uint256)
+          handler: handleURI
+      file: ./src/eth-prague-map.ts
+  - kind: ethereum
+    name: POAPScoreLocationVerifier
+    network: mumbai
+    source:
+      address: "0xBf4F68A5b20969626cE51b2ebe17b44075C4D7a8"
+      abi: POAPScoreLocationVerifier
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CreatePOAPLocation
+      abis:
+        - name: POAPScoreLocationVerifier
+          file: ./abis/POAPScoreLocationVerifier.json
+      eventHandlers:
+        - event: CreatePOAPLocation(uint256,uint256,uint256,bytes32)
+          handler: handleCreatePOAPLocation
+      file: ./src/poap-score-location-verifier.ts

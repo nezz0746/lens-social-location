@@ -1,0 +1,11 @@
+{
+  "mumbai": {
+    "ETHPragueMap": {
+      "address": "0xc0C02cB4b04f263F0A287b21d41c72d8e7374A74",
+      "startBlock": 36710196
+    },
+    "POAPScoreLocationVerifier": {
+      "address": "0xBf4F68A5b20969626cE51b2ebe17b44075C4D7a8"
+    }
+  }
+}
