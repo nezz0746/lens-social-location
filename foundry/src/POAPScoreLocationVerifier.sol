@@ -14,6 +14,13 @@ contract POAPScoreLocationVerifier is IMapLocationVerifier {
 
     mapping(uint256 => LocationSettings) public locationSettings;
 
+    event CreatePOAPLocation(
+        uint256 locationId,
+        uint256 startTime,
+        uint256 endTime,
+        bytes32 merkleRoot
+    );
+
     constructor() {}
 
     function verifyLocation(
@@ -52,5 +59,7 @@ contract POAPScoreLocationVerifier is IMapLocationVerifier {
             endTime,
             merkleRoot
         );
+
+        emit CreatePOAPLocation(locationId, startTime, endTime, merkleRoot);
     }
 }
