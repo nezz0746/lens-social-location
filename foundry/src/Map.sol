@@ -49,11 +49,11 @@ contract ETHPragueMap is Map {
         }
 
         // Burn account basic location token
-        _burn(account, locationId);
+        _burn(account, locationId, 1);
 
         // Mint account verified location token
         uint256 verifiedLocationId = locationId + locationVerifierIds[verifier];
 
-        _mint(account, verifiedLocationId);
+        _mint(account, verifiedLocationId, 1, "");
     }
 }
