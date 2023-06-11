@@ -1,6 +1,13 @@
 # Lens Social Proof of Location -  ETHPrague Hack
 
+<!-- Show schema.png -->
+<img src="./schema.png" />
+
 Building on top of of a MAP in the form of a ERC1155 token [(more info)](https://github.com/nezz0746/lens-map)
+
+Goal:
+
+Provide a social proof of location for Lens publications to gate & encrypt content for local users.
 
 Problem:
 
