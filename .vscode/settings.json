@@ -2,6 +2,8 @@
     "editor.formatOnSave": true,
     "solidity.remappings": [
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "forge-std/=lib/forge-std/src/"
+        "forge-std/=lib/forge-std/src/",
+        "lens-map/=lib/lens-map/src/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts"
     ]
 }
