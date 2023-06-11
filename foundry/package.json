@@ -1,0 +1,6 @@
+{
+    "name": "lens-social-location",
+    "scripts": {
+        "deploy:map": "source .env && forge script DeployMap --rpc-url $RPC_URL --private-key $PK --verify --etherscan-api-key $ETHERSCAN_API_KEY --broadcast -vvvv && node ./index.js"
+    }
+}
