@@ -10,6 +10,12 @@ contract ETHPragueMap is Map {
     error InvalidProof();
     error InvalidLocation();
 
+    event LocationVerified(
+        address indexed account,
+        uint256 locationId,
+        uint128 verifierId
+    );
+
     // Location encoding takes 128 bits, so we can use the upper 128 bits for the verifier id
     mapping(address => uint128) public locationVerifierIds;
 
@@ -47,6 +53,13 @@ contract ETHPragueMap is Map {
         ) {
             revert InvalidProof();
         }
+
+        // Emit event
+        emit LocationVerified(
+            account,
+            locationId,
+            locationVerifierIds[verifier]
+        );
 
         // Burn account basic location token
         _burn(account, locationId, 1);
