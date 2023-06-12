@@ -17,7 +17,7 @@ Solution:
 
 Using a modular artitecture to allow verification of location-tokens. In this hack I built a POAPLocationVerifier in
 which you can determine a time interval when you'd like to verify that addresses were in the area. On creation of the
-even you provide a snapshot of POAPs in this basic format:
+event, you provide a snapshot of POAPs in this basic format:
 
 ```json
 {
