@@ -11,7 +11,7 @@ Provide a social proof of location for Lens publications to gate & encrypt conte
 
 Problem:
 
-Movements on the map were arbitrary & unverifier.
+Movements on the map were arbitrary & unverified.
 
 Solution:
 
